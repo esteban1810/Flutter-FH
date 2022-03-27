@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
 
-import 'package:fl_components/screens/lisview2_screen.dart';
+import 'screens/screens.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final Map<String, Widget Function(BuildContext)> routes = {
+    'alert_screen':(BuildContext context)=> const AlertScreen(),
+    'card_screen':(BuildContext context)=> const CardScreen(),
+    'home_screen':(BuildContext context)=> const HomeScreen(),
+    'listview1_screen':(BuildContext context)=> const ListView1Screen(),
+    'listview2_screen':(BuildContext context)=> const ListView2Screen()
+  };
+
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: ListView2Screen()
+      initialRoute: 'alert_screen',
+      routes: routes,
     );
   }
 }

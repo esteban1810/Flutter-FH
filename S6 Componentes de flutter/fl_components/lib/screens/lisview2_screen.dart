@@ -12,12 +12,17 @@ class ListView2Screen extends StatelessWidget {
         title: const Center(
           child: Text("ListView Tipo 2")
         ),
+        backgroundColor: Colors.lightGreen,
       ),
       body:ListView.separated(
         itemBuilder: (context, index)=> ListTile(
-          leading: const Icon(Icons.airline_seat_legroom_reduced_outlined),
+          leading: const Icon(Icons.airline_seat_legroom_reduced_outlined, color: Colors.lightGreen,),
           title: Text(options[index]),
-          trailing: const Icon(Icons.arrow_forward_ios),
+          trailing: const Icon(Icons.arrow_forward_ios, color: Colors.lightGreen,),
+          onTap: (){
+            String value = options[index];
+            print('Impresion: '+value);
+          },
         ), 
         separatorBuilder:(context, index) => const Divider(), 
         itemCount: options.length

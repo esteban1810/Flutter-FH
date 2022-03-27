@@ -1,7 +1,6 @@
-import 'package:fl_components/screens/lisview2_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:fl_components/screens/lisview1_screen.dart';
+import 'package:fl_components/screens/lisview2_screen.dart';
 
 void main() => runApp(const MyApp());
 

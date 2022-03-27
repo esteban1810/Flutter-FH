@@ -1,3 +1,4 @@
+import 'package:fl_components/screens/lisview1_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,10 +13,27 @@ class HomeScreen extends StatelessWidget {
         title: const Text('HomeScreen'),
       ),
       body: ListView.separated(
-        itemBuilder: (context, index) => const ListTile(
-          title: Text('Ya es hora'),
-          leading:  Icon(Icons.timer_outlined),
-          trailing: Icon(Icons.arrow_forward_ios),
+        itemBuilder: (context, index) =>  ListTile(
+          title: const Text('Ya es hora'),
+          leading:  const Icon(Icons.timer_outlined),
+          trailing: const Icon(Icons.arrow_forward_ios),
+          onTap: (){
+            /*
+            //Esta es una forma de declarar nuestras
+            //En caso que no las hayamos creado en el MaterialApp
+            Route route = MaterialPageRoute<void>(
+                builder: (BuildContext context) => const ListView1Screen(),
+              );
+            Navigator.pushReplacement(context,route); //Elimina la screen anterior 
+                                                      //y muestra la nueva screen
+            */
+
+            //Este metodo se usa una vez se hayan especificado 
+            //las rutas en el MaterialApp principal
+            Navigator.pushNamed(context, 'listview1_screen'); //Sólo necesita el contexto 
+                                                              //y nombre de la ruta
+
+          },
         ), 
         separatorBuilder: (_,__)=>const Divider(),
         itemCount: 1000

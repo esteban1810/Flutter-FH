@@ -1,4 +1,3 @@
-import 'package:fl_components/screens/lisview1_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

@@ -1,19 +1,14 @@
+import 'package:fl_components/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/screens.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
-  final Map<String, Widget Function(BuildContext)> routes = {
-    'alert_screen':(BuildContext context)=> const AlertScreen(),
-    'card_screen':(BuildContext context)=> const CardScreen(),
-    'home_screen':(BuildContext context)=> const HomeScreen(),
-    'listview1_screen':(BuildContext context)=> const ListView1Screen(),
-    'listview2_screen':(BuildContext context)=> const ListView2Screen()
-  };
+  
 
 
   @override
@@ -21,8 +16,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute: 'home_screen',
-      routes: routes,
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.routes,
+      //onGenerateRoute se utiliza para mandar a llamar una vista, para 
+      //cuando no este definida la ruta a la que se desea acceder
+      //onGenerateRoute: (settings)=>AppRoutes.onGenerateRoute(settings)
+      onGenerateRoute: AppRoutes.onGenerateRoute //Cuando nuestra funcion recibe como argumento 
+                                                  //El mismo valor que llama a nuestra función
+                                                  //Se puede omitir los argumentos, tal es
+                                                  //este ejemplo
     );
   }
 }

@@ -21,8 +21,8 @@ class ListView2Screen extends StatelessWidget {
           title: Text(options[index]),
           trailing: const Icon(Icons.arrow_forward_ios, color: Colors.lightGreen,),
           onTap: (){
-            String value = options[index];
-            print('Impresion: '+value);
+            //String value = options[index];
+            //print('Impresion: '+value);
           },
         ), 
         separatorBuilder:(context, index) => const Divider(), 

@@ -1,4 +1,5 @@
 import 'package:fl_components/router/app_routes.dart';
+import 'package:fl_components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 
@@ -25,13 +26,7 @@ class MyApp extends StatelessWidget {
                                                   //Se puede omitir los argumentos, tal es
                                                   //este ejemplo
                                                   
-      theme: ThemeData.dark().copyWith(//Sirve para definir un estilo general en nuestra App
-        primaryColor: Colors.blueGrey,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.blueGrey,
-          elevation: 0
-        )
-      )                                                 
+      theme: AppTheme.lightTheme                                             
 
     );
   }

@@ -14,7 +14,8 @@ class ListView2Screen extends StatelessWidget {
         ),
         backgroundColor: Colors.lightGreen,
       ),
-      body:ListView.separated(
+      body:ListView.separated( //El metodo separated renderiza nuestros 
+                                //elementos al momento de visualizarlos
         itemBuilder: (context, index)=> ListTile(
           leading: const Icon(Icons.airline_seat_legroom_reduced_outlined, color: Colors.lightGreen,),
           title: Text(options[index]),

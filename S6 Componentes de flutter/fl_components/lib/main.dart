@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute: 'alert_screen',
+      initialRoute: 'home_screen',
       routes: routes,
     );
   }

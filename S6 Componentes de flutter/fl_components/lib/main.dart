@@ -20,10 +20,19 @@ class MyApp extends StatelessWidget {
       //onGenerateRoute se utiliza para mandar a llamar una vista, para 
       //cuando no este definida la ruta a la que se desea acceder
       //onGenerateRoute: (settings)=>AppRoutes.onGenerateRoute(settings)
-      onGenerateRoute: AppRoutes.onGenerateRoute //Cuando nuestra funcion recibe como argumento 
+      onGenerateRoute: AppRoutes.onGenerateRoute, //Cuando nuestra funcion recibe como argumento 
                                                   //El mismo valor que llama a nuestra función
                                                   //Se puede omitir los argumentos, tal es
                                                   //este ejemplo
+                                                  
+      theme: ThemeData.dark().copyWith(//Sirve para definir un estilo general en nuestra App
+        primaryColor: Colors.blueGrey,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.blueGrey,
+          elevation: 0
+        )
+      )                                                 
+
     );
   }
 }

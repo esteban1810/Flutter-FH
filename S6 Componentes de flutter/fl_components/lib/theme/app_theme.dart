@@ -17,6 +17,12 @@ class AppTheme{
     appBarTheme: const AppBarTheme(
       backgroundColor: primaryLigthColor,
       elevation: 0
-    )
+    ),
+    textButtonTheme: textButtonThemeData
   );
+
+  static TextButtonThemeData textButtonThemeData = TextButtonThemeData(
+    style: TextButton.styleFrom(primary: primaryLigthColor)
+  );
+
 }

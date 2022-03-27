@@ -1,7 +1,6 @@
 import 'package:fl_components/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
-import 'screens/screens.dart';
 
 void main() => runApp(const MyApp());
 
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.routes,
+      routes: AppRoutes.getRoutes(),
       //onGenerateRoute se utiliza para mandar a llamar una vista, para 
       //cuando no este definida la ruta a la que se desea acceder
       //onGenerateRoute: (settings)=>AppRoutes.onGenerateRoute(settings)

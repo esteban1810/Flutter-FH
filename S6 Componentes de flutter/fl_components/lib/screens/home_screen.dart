@@ -1,3 +1,4 @@
+import 'package:fl_components/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,8 +14,8 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView.separated(
         itemBuilder: (context, index) =>  ListTile(
-          title: const Text('Ya es hora'),
-          leading:  const Icon(Icons.timer_outlined),
+          title:Text(AppRoutes.menuOptions[index].name),
+          leading: AppRoutes.menuOptions[index].icon,
           trailing: const Icon(Icons.arrow_forward_ios),
           onTap: (){
             /*
@@ -29,13 +30,13 @@ class HomeScreen extends StatelessWidget {
 
             //Este metodo se usa una vez se hayan especificado 
             //las rutas en el MaterialApp principal
-            Navigator.pushNamed(context, 'listview1_screen'); //Sólo necesita el contexto 
+            Navigator.pushNamed(context, AppRoutes.menuOptions[index].route); //Sólo necesita el contexto 
                                                               //y nombre de la ruta
 
           },
         ), 
         separatorBuilder: (_,__)=>const Divider(),
-        itemCount: 1000
+        itemCount: AppRoutes.getRoutes().length
       )
     );
   }

@@ -18,7 +18,20 @@ class AppTheme{
       backgroundColor: primaryLigthColor,
       elevation: 0
     ),
-    textButtonTheme: textButtonThemeData
+    textButtonTheme: textButtonThemeData,
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        shape: const StadiumBorder(),
+        elevation: 0,
+        padding: const EdgeInsets.all(20),
+        primary: primaryLigthColor
+      )
+    ),
+
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: primaryLigthColor,
+    )
   );
 
   static TextButtonThemeData textButtonThemeData = TextButtonThemeData(

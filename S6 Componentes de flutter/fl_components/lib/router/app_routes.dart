@@ -10,6 +10,7 @@ class AppRoutes{
   static List<MenuOption> menuOptions = [
     //TODO: BORRAR HOME
     MenuOption(view: const AlertScreen(), name: "Alert Screen", icon: const Icon(Icons.add_alert,color: AppTheme.primaryLigthColor,), route: 'alert_screen'),
+    MenuOption(view: const AvatarScreen(), name: "Avatar Screen", icon: const Icon(Icons.supervisor_account_sharp,color: AppTheme.primaryLigthColor,), route: 'avatar_screen'),
     MenuOption(view: const CardScreen(), name: "Card Screen", icon: const Icon(Icons.card_giftcard,color: AppTheme.primaryLigthColor), route: 'card_screen'),
     MenuOption(view: const HomeScreen(), name: "Home Screen", icon: const Icon(Icons.home,color: AppTheme.primaryLigthColor), route: 'home_screen'),
     MenuOption(view: const ListView1Screen(), name: "ListView1 Screen", icon: const Icon(Icons.view_list_outlined,color: AppTheme.primaryLigthColor), route: 'listview1_screen'),

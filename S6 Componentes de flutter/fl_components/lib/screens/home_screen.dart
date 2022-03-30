@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
           },
         ), 
         separatorBuilder: (_,__)=>const Divider(),
-        itemCount: AppRoutes.getRoutes().length
+        itemCount: AppRoutes.menuOptions.length
       )
     );
   }

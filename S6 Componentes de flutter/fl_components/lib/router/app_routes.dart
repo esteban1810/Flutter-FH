@@ -15,6 +15,7 @@ class AppRoutes{
     MenuOption(view: const HomeScreen(), name: "Home Screen", icon: const Icon(Icons.home,color: AppTheme.primaryLigthColor), route: 'home_screen'),
     MenuOption(view: const ListView1Screen(), name: "ListView1 Screen", icon: const Icon(Icons.view_list_outlined,color: AppTheme.primaryLigthColor), route: 'listview1_screen'),
     MenuOption(view: const ListView2Screen(), name: "ListView2 Screen", icon: const Icon(Icons.format_line_spacing_outlined,color: AppTheme.primaryLigthColor), route: 'listview2_screen'),
+    MenuOption(view: const AnimatedScreen(), name: "Animated Screen", icon: const Icon(Icons.play_circle_fill,color: AppTheme.primaryLigthColor), route: 'play_screen'),
 
   ];
 

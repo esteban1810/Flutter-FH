@@ -31,11 +31,47 @@ class AppTheme{
 
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: primaryLigthColor,
+    ),
+
+    inputDecorationTheme: const InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20)
+        )
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20)
+        ),
+        borderSide: BorderSide(
+          color: primaryLigthColor
+        )
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20)
+        ),
+        borderSide: BorderSide(
+          color: primaryLigthColor
+        )
+      ),
     )
+    
   );
 
   static TextButtonThemeData textButtonThemeData = TextButtonThemeData(
     style: TextButton.styleFrom(primary: primaryLigthColor)
   );
 
+  static InputDecorationTheme inputDecorationTheme = const InputDecorationTheme(
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20)
+      )
+    )
+  );
 }

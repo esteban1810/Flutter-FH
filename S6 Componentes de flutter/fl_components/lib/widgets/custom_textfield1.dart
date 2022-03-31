@@ -6,9 +6,11 @@ class CustomTextField1 extends StatelessWidget {
   final String? helperText;
   final Icon? icon;
   final Icon? suffixIcon;
+  final TextInputType? textInputType;
+  final bool obscureText;
 
   const CustomTextField1({
-    Key? key, this.hintText, this.labelText, this.helperText, this.icon, this.suffixIcon,
+    Key? key, this.hintText, this.labelText, this.helperText, this.icon, this.suffixIcon, this.textInputType, this.obscureText=false,
   }) : super(key: key);
 
 
@@ -17,6 +19,8 @@ class CustomTextField1 extends StatelessWidget {
     return TextFormField(
       // autofocus: true,
       initialValue: '',
+      keyboardType: textInputType,
+      obscureText: obscureText,
       textCapitalization: TextCapitalization.words,
       onChanged: (text){},
       validator: (text){

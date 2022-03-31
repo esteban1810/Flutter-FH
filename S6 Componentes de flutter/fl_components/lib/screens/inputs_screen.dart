@@ -11,7 +11,11 @@ class InputsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Map<String,String> mapa = {
-      'nombre':'Pedro Sevilla'
+      'nombre':'',
+      'apellido':'',
+      'correo':'',
+      'password':'',
+      'role':'admin'
     };
 
     final GlobalKey<FormState> globalKey = GlobalKey<FormState>();
@@ -28,44 +32,52 @@ class InputsScreen extends StatelessWidget {
              key: globalKey,
              child: Column(
               children: [
-                const CustomTextField1(
+                CustomTextField1(
                   hintText: 'Escribe tu(s) nombre(s)', 
                   labelText: 'Nombre(s)', 
                   helperText: 'Sólo ingresa tu(s) nombre(s)', 
-                  icon: Icon(Icons.person), 
-                  suffixIcon: Icon(Icons.person_pin_outlined)),
+                  icon: const Icon(Icons.person), 
+                  suffixIcon: const Icon(Icons.person_pin_outlined),
+                  propertie: 'nombre',
+                  map: mapa,),
            
                   const SizedBox(height: 30,),
            
-                const CustomTextField1(
+                CustomTextField1(
                   hintText: 'Escribe tu(s) apellido(s)', 
                   labelText: 'Apellido(s)', 
                   helperText: 'Sólo ingresa letras', 
-                  icon: Icon(Icons.queue_play_next_outlined), 
-                  suffixIcon: Icon(Icons.plagiarism_rounded)),
+                  icon: const Icon(Icons.queue_play_next_outlined), 
+                  suffixIcon: const Icon(Icons.plagiarism_rounded), 
+                  map: mapa, 
+                  propertie: 'apellido',),
            
                   const SizedBox(height: 30,),
            
            
-                const CustomTextField1(
+                CustomTextField1(
                   hintText: 'Escribe tu correo', 
                   labelText: 'Correo', 
                   helperText: 'Ingresa un correo real', 
-                  icon: Icon(Icons.church),
+                  icon: const Icon(Icons.church),
                   textInputType: TextInputType.emailAddress,
-                  suffixIcon: Icon(Icons.email)),
+                  suffixIcon: const Icon(Icons.email),
+                  map: mapa,
+                  propertie: 'correo',),
            
                   const SizedBox(height: 30,),
            
            
-                const CustomTextField1(
+                CustomTextField1(
                   hintText: 'Escribe tu password', 
                   labelText: 'Password', 
                   // helperText: 'Ingresa ', 
-                  icon: Icon(Icons.password),
+                  icon: const Icon(Icons.password),
                   obscureText: true,
                   // textInputType: TextInputType.emailAddress,
-                  suffixIcon: Icon(Icons.password)),
+                  suffixIcon: const Icon(Icons.password),
+                  map: mapa,
+                  propertie: 'password',),
            
                   const SizedBox(height: 30,),
            
@@ -74,6 +86,7 @@ class InputsScreen extends StatelessWidget {
                     if(!globalKey.currentState!.validate()){
                       return;
                     }
+                    print(mapa);
                   }, 
                   child: const SizedBox(
                     width: double.infinity,

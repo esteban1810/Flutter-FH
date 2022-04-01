@@ -16,6 +16,7 @@ class AppRoutes{
     MenuOption(view: const AnimatedScreen(), name: "Animated Screen", icon: const Icon(Icons.play_circle_fill,color: AppTheme.primaryLigthColor), route: 'play_screen'),
     MenuOption(view: const InputsScreen(), name: "Inputs Screen", icon: const Icon(Icons.insert_photo_outlined,color: AppTheme.primaryLigthColor), route: 'inputs_screen'),
     MenuOption(view: const SliderScreen(), name: "Slider Screen", icon: const Icon(Icons.social_distance_rounded,color: AppTheme.primaryLigthColor), route: 'slider_screen'),
+    MenuOption(view: const ListViewBuilderScreen(), name: "ListView Builder Screen", icon: const Icon(Icons.build,color: AppTheme.primaryLigthColor), route: 'listviewbuilder_screen'),
 
   ];
 

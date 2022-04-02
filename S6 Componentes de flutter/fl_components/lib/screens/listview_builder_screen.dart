@@ -23,6 +23,7 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   void _scrollListener(){
     if((_scrollController.position.pixels+500)>=_scrollController.position.maxScrollExtent){
       fetchData();
+      
       // print('entra');
       // addElementsToList();
     }
@@ -32,14 +33,25 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
     if(isLoading)return;
 
     isLoading = true;
+    setState(() {});
 
     await Future.delayed(const Duration(seconds: 3));
 
     addElementsToList();
 
+
+    if((_scrollController.position.pixels+100)>=_scrollController.position.maxScrollExtent){
+      _scrollController.animateTo(
+        _scrollController.position.pixels-120, 
+        duration: const Duration(seconds: 1), 
+        curve: Curves.easeIn
+      );
+    }
+
     setState(() {});
 
     isLoading = false;
+
   }
 
   void addElementsToList(){
@@ -53,6 +65,7 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    
 
     return  Scaffold(
       body: MediaQuery.removePadding(
@@ -75,11 +88,13 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
                 image: NetworkImage('https://picsum.photos/500/200?image=${listIndexes[index ]}')
               )
             ),
-            Positioned(
-              bottom: 20,
-              left: size.width*.5-30,
-              child: const CustomProgressIndicator()
-            )
+
+            if(isLoading)
+              Positioned(
+                bottom: 20,
+                left: size.width*.5-30,
+                child: const CustomProgressIndicator()
+              )
           ],
         ),
       )

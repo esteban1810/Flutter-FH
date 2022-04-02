@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:fl_components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -55,11 +57,19 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   }
 
   void addElementsToList(){
-    int last = listIndexes.length;
+    int last = listIndexes.last;
 
     listIndexes.addAll(
       [1,2,3,4,5].map((e) => last+e)
     );
+  }
+
+  Future<void> onRefresh() async{
+    int lastId = listIndexes.last;
+    listIndexes.clear();
+    listIndexes.add(lastId);
+    addElementsToList();
+    setState(() {});
   }
 
   @override
@@ -74,19 +84,23 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
         removeBottom: true,
         child: Stack(
           children: [
-            ListView.builder(
-
-              controller: _scrollController,
-
-              itemCount: listIndexes.length,
-              //Widget Function(BuildContext, int)
-              itemBuilder: (context,index)=>FadeInImage(
-                width: double.infinity,
-                height: 200,
-                fit: BoxFit.cover,
-                placeholder: const AssetImage('assets/jar-loading.gif'),
-                image: NetworkImage('https://picsum.photos/500/200?image=${listIndexes[index ]}')
-              )
+            RefreshIndicator(
+              onRefresh:onRefresh,
+              color: AppTheme.primaryLigthColor,
+              child: ListView.builder(
+            
+                controller: _scrollController,
+            
+                itemCount: listIndexes.length,
+                //Widget Function(BuildContext, int)
+                itemBuilder: (context,index)=>FadeInImage(
+                  width: double.infinity,
+                  height: 200,
+                  fit: BoxFit.cover,
+                  placeholder: const AssetImage('assets/jar-loading.gif'),
+                  image: NetworkImage('https://picsum.photos/500/200?image=${listIndexes[index ]}')
+                )
+              ),
             ),
 
             if(isLoading)

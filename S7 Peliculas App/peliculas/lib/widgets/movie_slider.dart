@@ -9,7 +9,6 @@ class MovieSlider extends StatelessWidget {
       alignment: Alignment.centerLeft,
       height: 220,
       width: double.infinity,
-      color: Colors.yellow,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children:  [
@@ -41,8 +40,36 @@ class _MovieSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
-      color: Colors.green,
       margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, '/details',arguments: 'vamos');
+            },
+            child: ClipRRect(
+              clipBehavior: Clip.antiAlias,
+              borderRadius: BorderRadius.circular(15),
+              child: Container(
+                height: 130,
+                width: double.infinity,
+                color: Colors.grey,
+                child: const FadeInImage(
+                  image: NetworkImage('https://via.placeholder.com/288x188'),
+                  placeholder: AssetImage('assets/no-image.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 5,),
+          const Text('El retorno del jedi encabritado más que nunca',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+          )
+        ],
+      ),
     );
   }
 }
